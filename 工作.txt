@@ -1,0 +1,33 @@
+﻿登陆界面	Login   （完成）
+首页LOGO	Home（完成）
+
+门禁通行查询界面	用户类型：0业主 1物业员工    进出类型：0正常外出   1正常进入  时间：上个月到现在
+相机名称可输入，从后台取值
+
+获取：    var opertype = mini.get("cbb1");
+
+comboox数据格式：
+    var operdata = new Array();
+    operdata[0] = { id: 0, text: "物业操作" };
+    operdata[1] = { id: 1, text: "业主自行操作" };
+
+combobox要有空选项
+
+
+小区ID：parent.$("#checkCommId").val()
+角色管理 4	1	role
+账号管理 4	2	operpater  （完成）
+物业收费标准 4	3	PropertyChargeCriterion   （完成）
+楼栋管理 4	4	BuildingManagement（完成）
+业主管理 4	5	Owner  （完成）
+物业部门 4	6	CommunityDept（完成）
+物业人员 4	7	PropertyEmployee（完成）
+物业套餐 4	8	ChargePackage（完成）
+物业缴费 1	9	PropertyCharge（完成）
+门禁设备 4	10	AccessDevice（完成，不确定）
+门禁权限 3	11	AccessAuthorise（待定）
+物业缴费 记录2	12	ReportPropertyCharge（完成）
+通行记录 2	13	RecordAccessPass（完成）
+
+
+实时监控        ----  增加实时通行界面   通行图片，人员姓名，进出时间

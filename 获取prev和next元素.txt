@@ -1,0 +1,27 @@
+javascript原生操作系列-获取prev\next元素 
+
+        function getNextEle(node) {
+            var node = node.nextSibling;
+            if (node) {
+                if (node.nodeType === 1) {
+                    return node;
+                }
+                if (node.nextSibling) {
+                    return arguments.callee(node);
+                }
+            }
+            return null;
+        }
+        function getPrevEle(node) {
+            var preNode = node.previousSibling;
+            if (preNode) {
+                if (preNode.nodeType === 1) {
+                    return preNode;
+                }
+                if (preNode.previousSibling) {
+                    return arguments.callee(preNode);
+                }
+            } else {
+                return null;
+            }
+ 	}

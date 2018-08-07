@@ -1,0 +1,26 @@
+visual studio快捷键
+
+ctrl + m			鼠标在哪个编辑部分则这个部分代码全部收缩
+
+ctrl + j			调出代码提示
+
+ctrl + [ 或者 ctrl + ] 
+
+ctrl + k + c		注释代码
+
+shift + alt + ↑或者↓	多行编辑
+
+ctrl + -		跳到上一次编辑的位置
+
+ctrl + shift + -	回到下一次编辑位置
+
+ctrl + g		点位到具体的一行代码
+
+ctrl + home		跳到代码的头部
+
+ctrl + end		跳到代码的底部
+
+Shift +　F12		可以快速找到所有使用了该对象的地方（没用）
+
+ctrl +e+f		格式化代码
+			

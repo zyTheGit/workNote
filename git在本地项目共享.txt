@@ -1,0 +1,15 @@
+1、（电脑A）先设置一个远程库（本地的文件夹 eg: test  path:file:////192.168.0.32/test ）
+	①git init  --bare  建立一个空仓库
+2、（电脑A）将自己的一个项目先 
+	① git init     
+	② git commit -am "提交" 
+	③自己的这个项目 与 本地远程库关联  git remote add origin  file:////192.168.0.32/test 
+	④最终提交到本地远程库 git push origin master
+3、（电脑B）将自己的一个空文件夹
+	① git init   
+	②  与电脑A本地远程库关联  git remote add origin  file:////192.168.0.32/test  
+	③克隆项目 git clone   file:////192.168.0.32/test
+	④更新项目 cd 到 项目目录下 git  pull
+
+
+如果git commit -am "tijiao" 不能一次性提交可以使用 git add .   再git commit -m "tijiao" 即可实现

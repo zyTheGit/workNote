@@ -1,0 +1,21 @@
+例子：
+数据库名：zyTest  
+表名：operator
+字段分别为：Name（nvarchar(50)） 
+	      age（int） 
+	      job（nvarchar(50)）
+	      address（nvarchar(50)） 
+
+1、insert into zyTestdbo.operator values ('zy',18,'前端','武汉')    --向数据库zyTest下的表operator 中插入一条数据，跟上面的字段顺序对应
+
+2、select * from zyTest.dbo.operator where Name='zy'   --查找数据库zyTest下的表operator 中的字段为Name='zy'的数据
+
+3、update zyTest.dbo.operator set job='前端大神' where Name='zy66' and age='18'  --更新数据库zyTest下的表operator字段Name='zy66' 和 age='18'更改字段job内容为'前端大神'
+
+4、delete from zyTest.dbo.operator where Name='zy66'  --删除数据库zyTest下的表operator字段Name='zy66'的数据
+
+5、delete top (1) from  zyTest.dbo.operator where Name='zy66' --删除数据库zyTest下的表operator从上往下的一条字段为Name='zy66'的数据
+
+6、select * from zyTest.dbo.operator where Name like '%4'  --匹配数据库zyTest下的表operator下的Name最后为4的数据
+
+7、select * from zyTest.dbo.operator where Name like '4%'  --匹配数据库zyTest下的表operator下的Name最前为4的数据

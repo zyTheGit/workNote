@@ -1,0 +1,12 @@
+1、miniui给下拉框的添加值
+<form>
+ <input id="CardType" name="CardType" class="mini-combobox" required=required width="200" />
+</form>
+
+mini.parse();
+var selectcommname;
+var form = new mini.Form("form1");
+ var cardType = new Array({ id: 0, text: "非机动车卡" }, { id: 1, text: "用户卡" });
+mini.get("CardType").setData(cardType);
+mini.get("CardType").select(0);//给一个默认值
+

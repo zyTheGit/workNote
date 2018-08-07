@@ -1,0 +1,5 @@
+xshell  命令
+admin
+123456
+ps  看进程
+./userapp  运行

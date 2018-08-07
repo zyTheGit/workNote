@@ -1,0 +1,4 @@
+C# 里的web.Config(最外层的)与App.Config里的connectStrings标签连接sql数据库配置的两种情况如下
+
+1、连接 sql 使用window登录     <add name="Entities" connectionString="metadata=res://*/Model.csdl|res://*/Model.ssdl|res://*/Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=SC-201804270139;initial catalog=ParkingCentralControl;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+2、连接 sql 使用SQL server登录 <add name="Entities" connectionString="metadata=res://*/Model.csdl|res://*/Model.ssdl|res://*/Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=ParkingCentralControl;user id=sa;password=1;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />

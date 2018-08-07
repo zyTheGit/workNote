@@ -1,0 +1,10 @@
+移动端开发
+1、禁止ios和安卓页面的橡皮筋效果
+	document.body.addEventListener('touchmove', function (e) {
+		e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+	}, { passive: false }); //passive 参数不能省略，用来兼容ios和android
+
+2、完美旋转圆兼容pc和移动端
+	 parseInt(Math.atan2(wX, wY) / (Math.PI / 180) - 90);
+
+3、调用微信的接口项目必须在80端口下，就不会出现兼容问题

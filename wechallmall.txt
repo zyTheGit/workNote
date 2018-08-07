@@ -1,0 +1,57 @@
+[
+  {
+    "elementChieseName": "账户管理",
+    "jurisdictionName": [
+      {
+        "englishNa": "role-edit",
+        "chineseNa": "角色编辑"
+      },
+      {
+        "englishNa": "opera-eit",
+        "chineseNa": "操作员编辑"
+      }
+    ]
+  },
+  {
+    "elementChieseName": "配置管理",
+    "jurisdictionName": [
+      {
+        "englishNa": "goods-edit",
+        "chineseNa": "商品编辑"
+      },
+      {
+        "englishNa": "backgroundImage-upload",
+        "chineseNa": "背景图片编辑"
+      },
+      {
+        "englishNa": "tweet-upload",
+        "chineseNa": "推文上传"
+      },
+      {
+        "englishNa": "shop-edit",
+        "chineseNa": "店铺编辑"
+      },
+      {
+        "englishNa": "video-upload",
+        "chineseNa": "视频上传"
+      },
+      {
+        "englishNa": "shopOrder-add",
+        "chineseNa": "商铺订单新增"
+      },
+      {
+        "englishNa": "shopOrder-refuse",
+        "chineseNa": "商铺订单拒绝"
+      }
+    ]
+  },
+  {
+    "elementChieseName": "报表",
+    "jurisdictionName": [
+      {
+        "englishNa": "business-see",
+        "chineseNa": "营业班次报表查看"
+      }
+    ]
+  }
+]

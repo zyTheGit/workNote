@@ -1,0 +1,91 @@
+1、outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0); appearance:none; -webkit-appearance: none    清楚长按图片出现蓝色背景
+
+2、white-space:nowrap; overflow:hidden; text-overflow:ellipsis;   文字太多出现省略号效果
+
+     （显示几行）word-break: break-all;-webkit-line-clamp: 2;overflow: hidden;display: -webkit-box;text-overflow: ellipsis;-webkit-box-orient: vertical;}/* 两行文字超出隐藏，出现省略号 */
+	
+	JavaScript 语法： object.style.whiteSpace="pre"；不换行
+
+3、ontouchstart = "return false;"（不兼容火狐） 或者
+   -webkit-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   user-select:none;
+
+   -webkit-touch-callout:none;禁止复制	
+
+4、pointer-events: none;     禁止跳转	
+
+
+5、兼容ios系统不兼容fixed   overflow-y: scroll;增加该属性，可以增加弹性 
+			-webkit-overflow-scrolling: touch;可以解决安卓端出现卡顿现象
+
+6、兼容ios系统$(document).click事件	在绑定新生成的DOM元素,必须给此DOM添加css样式cursor:pointer; pointer-event:none;禁止事件	
+
+
+7、ios上click点击事件出现300ms的延迟，解决办法用touchstart	如果不需要跳转再加上touchend事件preventDefault() 方法阻止元素发生默认的行为
+
+8、.loadon{padding:0 !important;text-align:center;font-size:12px;background:none !important;color:#969696;margin-top:0 !important;line-height:40px;}
+.loadon span{background:url(../images/loading-ani.gif) no-repeat 0 center;background-size:23px auto;padding-left:30px;}加载样式	
+
+9、input文本类型禁止输入直接在内部样式添加readonly="readonly"	
+
+10、表单提交	<form action="demo_form.asp" method="get">
+  		Name: <input type="text" name="usr_name" required="required" />/*required 必须的*/
+  		<input type="submit" />
+		</form>
+
+11、<input onfocus='this.blur()' />禁止选中 或者onfocusout
+
+12、获取对应的select下的option的innerHTML值  在select标签下添加onchange=''事件
+	var s=select.options[select.selectedIndex].innerHTML;获取对应的option标签下的innerHTML值
+
+13、限制input输入文本长度  <input type='text' maxlength='长度'>
+
+
+14、input用js设置readonly   document.getquerySelector('input').readOnly='true/false'; 但必须在input标签的内部样式里设置readonly='readonly'
+
+15、阻止冒泡
+ 	if (event.stopPropagation) {
+                event.stopPropagation();
+            } else {
+                event.cancelBubble = true;
+            }
+
+16、标签禁止事件 pointer-events:none 兼容问题：ie和opera不支持
+
+17、$("input").attr("spellcheck", false);//input框阻止出现波浪线（输入中英文时）
+
+18、给tbody滚动轴
+  table{table-layout:fixed;width:100%；}
+  table > thead, table > tbody > tr {display:table;table-layout:fixed;width:100%;}
+table tbody{display:block;max-height:200px;overflow-y:scroll;}
+
+19、字体居中的方法（http://www.th7.cn/web/html-css/201504/98912.shtml）
+
+20、防止浏览器记住密码<input id='password' onfocus="this.type='password'"  required placeholder='请输入密码'>
+在input 中加onfocus="this.type='password'"
+
+21、js 添加class(不替换之前的) obj.className+=""+name;
+
+22、原生js添加class  document.getElementById("div").classList.add(".class");
+	移出class   document.getElementById("div").classList.remove(".class");
+
+23、给input获取焦点的光标改变颜色caret-color:red;
+
+24、判断一个标签是什么标签document.getElementById("div").tagName=="DIV";(判断的值必须大写)
+
+25、让文字自动动起来 <marquee behavior="scroll" contenteditable="true" onstart="this.firstChild.innerHTML+=this.firstChild.innerHTML;" scrollamount="3" width="200" onmouseover="this.stop();" onmouseout="this.start();">总车位和临时车为零时无限制进出,设置总车位和临时车为零时混合进出</marquee>
+
+26、禁止输入框记住密码  autocomplete="new-password"  novalidata="false"
+
+移动端开发
+27、禁止ios和安卓页面的橡皮筋效果
+	document.body.addEventListener('touchmove', function (e) {
+		e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+	}, { passive: false }); //passive 参数不能省略，用来兼容ios和android
+
+28、完美旋转圆兼容pc和移动端
+	 parseInt(Math.atan2(wX, wY) / (Math.PI / 180) - 90);
+
+29、调用微信的接口项目必须在80端口下，就不会出现兼容问题

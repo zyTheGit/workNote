@@ -1,0 +1,1 @@
+按Windows+R输入services.msc，在服务里面找到Distributed Transaction Coordinator和Windows Update这个服务，右键—启动。

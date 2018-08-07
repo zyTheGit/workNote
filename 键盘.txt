@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.2.0.css" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-color: #f0f0f0;
+        }
+
+        body {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+            width: 100%;
+        }
+
+        .Hide {
+            display: none !important;
+        }
+
+        .Disp {
+            display: flex !important;
+            display: -webkit-flex !important;
+        }
+
+        .Keyborad {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+            width: 100%;
+            display: none;
+        }
+
+        .Keyborad .keyrow {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-flow: row;
+            flex-flow: row;
+            width: 100%;
+            height: 50px;
+        }
+
+        .Keyborad .keyrow .key {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            box-sizing: border-box;
+            margin-top: 4px;
+            margin-left: 3px;
+            height: 44px;
+            font-size: 34px;
+            line-height: 44px;
+            color: #545253;
+            text-align: center;
+            background-size: 20px 20px;
+            background-position: center 6px;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            background-color: buttonface;
+            box-shadow: 2px 2px 3px 2px #CCCCCC;
+            background-color: darkcyan;
+            color: white;
+            /*°´ÏÂÐ§¹û*/
+            /*appearance: button;
+            -moz-appearance: button;
+            /* Firefox */
+            /*-webkit-appearance:button;*/
+            /* Safari and Chrome */
+            /* °´ÏÂÐ§¹û*/
+        }
+
+        .rightkey {
+            margin-right: 3px;
+        }
+
+        .space {
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+
+        .space img {
+            position: relative;
+            top: 3PX;
+        }
+
+        .place-holder {
+            -webkit-box-flex: 0.5;
+            -webkit-flex: 0.5;
+            flex: 0.5;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+            line-height: 44px;
+            height: 30px;
+        }
+
+        .inputcontent {
+            -webkit-box-flex: 8;
+            -webkit-flex: 8;
+            flex: 8;
+            width: 100%;
+            color: red;
+            font-size: 18px;
+            text-align: right;
+            line-height: 44px;
+        }
+
+        .inputrow {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-flow: row;
+            flex-flow: row;
+            width: 100%;
+            padding: 20px;
+            !important height: 46px;
+            box-sizing: border-box;
+        }
+
+        .plate_text {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            display: flex;
+            display: -webkit-flex;
+            font-size: 22px;
+            text-align: right;
+            height: 44px;
+            margin-left: 10px;
+        }
+
+        .plate_input {
+            -webkit-box-flex: 5;
+            -webkit-flex: 5;
+            flex: 5;
+            height: 44px;
+            -webkit-box-orient: horizontal;
+            -webkit-flex-flow: row;
+            flex-flow: row;
+            display: flex;
+            display: -webkit-flex;
+        }
+
+        .inputNoFocus {
+            border: 1px solid #888;
+        }
+
+        .inputFocus {
+            border: 2px solid green;
+        }
+
+        .input_Val {
+            display: flex;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            display: -webkit-flex;
+            flex: 1;
+            height: 44px;
+            border-radius: 2px;
+            margin-left: 4px;
+            box-sizing: border-box;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: Center;
+            -webkit-align-items: Center;
+        }
+
+        .goGrant span {
+            font-size: 2rem;
+        }
+
+        #goGrant {
+            width: 98%;
+            margin-left: 1%;
+        }
+
+        #tips-1 {
+            position: absolute;
+            top: 0;
+            display: none;
+            z-index: 110;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="place-holder">
+        <h1>ÇëÊäÈë³µÅÆºÅ</h1>
+
+    </section>
+
+    <div class="inputcontent">
+        <div class="inputrow">
+            <div class="plate_text">³µ&nbsp;&nbsp;ÅÆ</div>
+
+            <div class="plate_input">
+
+                <div id="val1" tapmode class="input_Val" onclick="test(1)"></div>
+                <div id="val2" tapmode class="input_Val" onclick="test(2)"></div>
+                <div id="val3" tapmode class="input_Val" onclick="test(3)"></div>
+                <div id="val4" tapmode class="input_Val" onclick="test(4)"></div>
+                <div id="val5" tapmode class="input_Val" onclick="test(5)"></div>
+                <div id="val6" tapmode class="input_Val" onclick="test(6)"></div>
+                <div id="val7" tapmode class="input_Val" onclick="test(7)"></div>
+
+
+            </div>
+        </div>
+        <div class=" Keyborad" id="zm_keyborad">
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('0')">0</div>
+                <div class="key" tapmode onclick="KeyDown('1')">1</div>
+                <div class="key" tapmode onclick="KeyDown('2')">2</div>
+                <div class="key" tapmode onclick="KeyDown('3')">3</div>
+                <div class="key" tapmode onclick="KeyDown('4')">4</div>
+                <div class="key" tapmode onclick="KeyDown('5')">5</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('6')">6</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('7')">7</div>
+                <div class="key" tapmode onclick="KeyDown('8')">8</div>
+                <div class="key" tapmode onclick="KeyDown('9')">9</div>
+                <div class="key" tapmode onclick="KeyDown('A')">A</div>
+                <div class="key" tapmode onclick="KeyDown('B')">B</div>
+                <div class="key" tapmode onclick="KeyDown('C')">C</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('D')">D</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('E')">E</div>
+                <div class="key" tapmode onclick="KeyDown('F')">F</div>
+                <div class="key" tapmode onclick="KeyDown('G')">G</div>
+                <div class="key" tapmode onclick="KeyDown('H')">H</div>
+                <div class="key" tapmode onclick="KeyDown('J')">J</div>
+                <div class="key" tapmode onclick="KeyDown('K')">K</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('L')">L</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('M')">M</div>
+                <div class="key" tapmode onclick="KeyDown('N')">N</div>
+                <div class="key" tapmode onclick="KeyDown('P')">P</div>
+                <div class="key" tapmode onclick="KeyDown('Q')">Q</div>
+                <div class="key" tapmode onclick="KeyDown('R')">R</div>
+                <div class="key" tapmode onclick="KeyDown('S')">S</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('T')">T</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('U')">U</div>
+                <div class="key" tapmode onclick="KeyDown('V')">V</div>
+                <div class="key" tapmode onclick="KeyDown('W')">W</div>
+                <div class="key" tapmode onclick="KeyDown('X')">X</div>
+                <div class="key" tapmode onclick="KeyDown('Y')">Y</div>
+                <div class="key" tapmode onclick="KeyDown('Z')">Z</div>
+                <div class="key rightkey space" tapmode onclick="Backspace()">
+                    <img src="../image/space.png" />
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class=" Keyborad " id="hz_keyborad">
+
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('¾©')">¾©</div>
+                <div class="key" tapmode onclick="KeyDown('»¦')">»¦</div>
+                <div class="key" tapmode onclick="KeyDown('Õã')">Õã</div>
+                <div class="key" tapmode onclick="KeyDown('ÔÁ')">ÔÁ</div>
+                <div class="key" tapmode onclick="KeyDown('ËÕ')">ËÕ</div>
+                <div class="key" tapmode onclick="KeyDown('Â³')">Â³</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('½ú')">½ú</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('¼½')">¼½</div>
+                <div class="key" tapmode onclick="KeyDown('Ô¥')">Ô¥</div>
+                <div class="key" tapmode onclick="KeyDown('´¨')">´¨</div>
+                <div class="key" tapmode onclick="KeyDown('Óå')">Óå</div>
+                <div class="key" tapmode onclick="KeyDown('ÁÉ')">ÁÉ</div>
+                <div class="key" tapmode onclick="KeyDown('ºÚ')">ºÚ</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('Íî')">Íî</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('¶õ')">¶õ</div>
+                <div class="key" tapmode onclick="KeyDown('Ïæ')">Ïæ</div>
+                <div class="key" tapmode onclick="KeyDown('¸Ó')">¸Ó</div>
+                <div class="key" tapmode onclick="KeyDown('Ãö')">Ãö</div>
+                <div class="key" tapmode onclick="KeyDown('ÉÂ')">ÉÂ</div>
+                <div class="key" tapmode onclick="KeyDown('¸Ê')">¸Ê</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('Äþ')">Äþ</div>
+            </div>
+            <div class="keyrow">
+                <div class="key" tapmode onclick="KeyDown('ÃÉ')">ÃÉ</div>
+                <div class="key" tapmode onclick="KeyDown('½ò')">½ò</div>
+                <div class="key" tapmode onclick="KeyDown('¹ó')">¹ó</div>
+                <div class="key" tapmode onclick="KeyDown('ÔÆ')">ÔÆ</div>
+                <div class="key" tapmode onclick="KeyDown('¹ð')">¹ð</div>
+                <div class="key" tapmode onclick="KeyDown('Çí')">Çí</div>
+                <div class="key rightkey" tapmode onclick="KeyDown('Çà')">Çà</div>
+            </div>
+            <div class="keyrow">
+                <div class="key"></div>
+                <div class="key" tapmode onclick="KeyDown('ÐÂ')">ÐÂ</div>
+                <div class="key" tapmode onclick="KeyDown('²Ø')">²Ø</div>
+                <div class="key" tapmode onclick="KeyDown('¸Û')">¸Û</div>
+                <div class="key" tapmode onclick="KeyDown('°Ä')">°Ä</div>
+                <div class="key" tapmode onclick="KeyDown('Ì¨')">Ì¨</div>
+                <div class="key rightkey space">
+                    <img src="../image/space.png" tapmode onclick="Backspace()" />
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- <p><div class="aui-btn aui-btn-success aui-btn-block"  id="goGrant" onclick="sendGo()"><span>·¢&nbsp;&nbsp;&nbsp;&nbsp;·Å</span></div></p> -->
+    <div class="aui-content-padded">
+        <div class="aui-btn aui-btn-block aui-btn-primary" tapmode onclick="sendGo()">·¢„»</div>
+    </div>
+    <div class="aui-tips aui-margin-b-15" id="tips-1">
+        <i class="aui-iconfont aui-icon-info"></i>
+        <div class="aui-tips-title pleaseWriteName">ÇëÊäÈëÍêÕû³µÅÆ</div>
+        <i class="aui-iconfont aui-icon-close closeAlert"></i>
+    </div>
+</body>
+<script src="../script/api.js"></script>
+<script src="../script/aui-dialog.js"></script>
+<script type="application/javascript">
+    var explorer = window.navigator.userAgent;
+    //ie
+    if (explorer.indexOf("MSIE") >= 0) {
+        console.log("ie");
+    }
+    //firefox
+    else if (explorer.indexOf("Firefox") >= 0) {
+        console.log("Firefox");
+    }
+    //Chrome
+    else if (explorer.indexOf("Chrome") >= 0) {
+        console.log("Chrome");
+    }
+    //Opera
+    else if (explorer.indexOf("Opera") >= 0) {
+        console.log("Opera");
+    }
+    //Safari
+    else if (explorer.indexOf("Safari") >= 0) {
+        console.log("Safari");
+    }
+    var FixedCouponsTypeID;
+    var BussinessId;
+    var CouponsType;
+    var BaseUrl = 'http://';
+    var Value;
+    var counvalue;
+    apiready = function() {
+        if (localStorage.SerAddr) {
+            BaseUrl = BaseUrl + localStorage.SerAddr; //¶ÁÈ¡·þÎñÆ÷µÄ»ùµØÖ·
+        }
+        BaseUrl = BaseUrl + ":8686";
+        FixedCouponsTypeID = api.pageParam.FixedCouponsTypeID;
+        BussinessId = api.pageParam.BussinessId;
+        CouponsType = api.pageParam.CouponsType;
+        Value = api.pageParam.Value;
+        counvalue = api.pageParam.counvalue;
+        console.log(counvalue + "Ôª");
+    }
+    var inputindex = 1;
+    var Focusindex = 1;
+    var Val1 = document.getElementById("val1");
+    var Val2 = document.getElementById("val2");
+    var Val3 = document.getElementById("val3");
+    var Val4 = document.getElementById("val4");
+    var Val5 = document.getElementById("val5");
+    var Val6 = document.getElementById("val6");
+    var Val7 = document.getElementById("val7");
+    test(1);
+
+    function SetInputFocus(index) {
+        ClearNoFocus();
+        ClearFocus();
+        switch (index) {
+            case 1:
+                addClass(Val1, 'inputFocus');
+                break;
+            case 2:
+                addClass(Val2, 'inputFocus');
+                break;
+            case 3:
+                addClass(Val3, 'inputFocus');
+                break;
+            case 4:
+                addClass(Val4, 'inputFocus');
+                break;
+            case 5:
+                addClass(Val5, 'inputFocus');
+                break;
+            case 6:
+                addClass(Val6, 'inputFocus');
+                break;
+            case 7:
+                addClass(Val7, 'inputFocus');
+                break;
+            default:
+                break;
+        }
+        Focusindex = index;
+    }
+
+    function ClearNoFocus() {
+        addClass(Val1, 'inputNoFocus');
+        addClass(Val2, 'inputNoFocus');
+        addClass(Val3, 'inputNoFocus');
+        addClass(Val4, 'inputNoFocus');
+        addClass(Val5, 'inputNoFocus');
+        addClass(Val6, 'inputNoFocus');
+        addClass(Val7, 'inputNoFocus');
+    }
+
+    function ClearFocus() {
+        switch (Focusindex) {
+            case 1:
+                removeClass(Val1, 'inputFocus');
+                addClass(Val1, 'inputNoFocus');
+                break;
+            case 2:
+                removeClass(Val2, 'inputFocus');
+                addClass(Val2, 'inputNoFocus');
+                break;
+            case 3:
+                removeClass(Val3, 'inputFocus');
+                addClass(Val3, 'inputNoFocus');
+                break;
+            case 4:
+                removeClass(Val4, 'inputFocus');
+                addClass(Val4, 'inputNoFocus');
+                break;
+            case 5:
+                removeClass(Val5, 'inputFocus');
+                addClass(Val5, 'inputNoFocus');
+                break;
+            case 6:
+                removeClass(Val6, 'inputFocus');
+                addClass(Val6, 'inputNoFocus');
+                break;
+            case 7:
+                removeClass(Val7, 'inputFocus');
+                addClass(Val7, 'inputNoFocus');
+                break;
+            default:
+                break;
+        }
+    }
+
+    function test(index) {
+        inputindex = index;
+        if (inputindex == 1) {
+            var zm = document.getElementById("zm_keyborad")
+            removeClass(zm, 'Disp');
+            addClass(zm, 'Hide');
+            var hz = document.getElementById("hz_keyborad");
+            removeClass(hz, 'Hide');
+            addClass(hz, 'Disp');
+
+        } else {
+            var zm = document.getElementById("zm_keyborad")
+            removeClass(zm, 'Hide');
+            addClass(zm, 'Disp');
+            var hz = document.getElementById("hz_keyborad");
+            removeClass(hz, 'Disp');
+            addClass(hz, 'Hide');
+        }
+        SetInputFocus(inputindex);
+    }
+
+    function KeyDown(key) {
+
+        WriteVal(inputindex, key);
+        if (inputindex < 7) {
+            inputindex++;
+            test(inputindex);
+        }
+
+    }
+
+    function Backspace() {
+        if (inputindex > 1) {
+            ClearVal(inputindex);
+            inputindex--;
+            test(inputindex);
+        } else if (inputindex == 1) {
+            ClearVal(inputindex);
+        }
+    }
+
+    function ClearVal(index) {
+        switch (index) {
+            case 1:
+                Val1.innerHTML = "";
+                break;
+            case 2:
+                Val2.innerHTML = "";
+                break;
+            case 3:
+                Val3.innerHTML = "";
+                break;
+            case 4:
+                Val4.innerHTML = "";
+                break;
+            case 5:
+                Val5.innerHTML = "";
+                break;
+            case 6:
+                Val6.innerHTML = "";
+                break;
+            case 7:
+                Val7.innerHTML = "";
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    function WriteVal(index, val) {
+        switch (index) {
+            case 1:
+                Val1.innerHTML = val;
+                break;
+            case 2:
+                Val2.innerHTML = val;
+                break;
+            case 3:
+                Val3.innerHTML = val;
+                break;
+            case 4:
+                Val4.innerHTML = val;
+                break;
+            case 5:
+                Val5.innerHTML = val;
+                break;
+            case 6:
+                Val6.innerHTML = val;
+                break;
+            case 7:
+                Val7.innerHTML = val;
+                break;
+            default:
+                break;
+
+        }
+    }
+
+
+
+    function hasClass(element, cName) { //¼ì²éclassÊÇ·ñ´æÔÚ
+        return !!element.className.match(new RegExp('(\\s|^)' + cName + '(\\s|$)'));
+    }
+
+    function addClass(element, cName) { //Ìí¼ÓÒ»¸öclass
+        if (!hasClass(element, cName)) {
+            element.className += ' ' + cName;
+        }
+    }
+
+    function removeClass(element, cName) { //ÒÆ³ýÒ»¸öclass
+        if (hasClass(element, cName)) {
+            element.className = element.className.replace(new RegExp('(\\s|^)' + cName + '(\\s|$)'), ' ');
+        }
+    }
+</script>
+
+</html>

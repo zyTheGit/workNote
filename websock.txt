@@ -1,0 +1,30 @@
+
+        var socket;
+        function initialWebSocket(stopPlaceId) {
+            if (!window.WebSocket) {
+                window.WebSocket = window.MozWebSocket;
+            }
+            var websocketInfo = new Object();
+            websocketInfo.stopPlaceId = stopPlaceId;
+            websocketInfo.key = "identity";
+            websocketInfo.value = "WY";
+            if (window.WebSocket) {
+                socket = new WebSocket("ws://" + stopPlaceId + ":8083/websocket/?request=" + $.base64.btoa(JSON.stringify(websocketInfo)));
+                socket.onmessage = function (event) {
+                    console.log(event.data);
+                    var obj = JSON.parse(event.data); // 由JSON字符串转换为JSON对象
+                    console.log(obj)
+                    
+                };
+                socket.onopen = function (event) {
+                    console.log("websocket 打开了");
+                    socket.send("Hello!");
+                };
+                socket.onclose = function (event) {
+                    console.log("websocket 关闭了");
+                };
+            }
+        }
+        var domain = "wooowoo.cn";
+
+        initialWebSocket(domain)

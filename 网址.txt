@@ -1,0 +1,13 @@
+www.it-wy.cn:8689   四码合一
+账号：1
+密码：1
+admin/admin
+
+www.it-wy.cn:8181  免布线系统
+账号：administrator	
+密码：www.it-wy.cn
+
+
+
+
+
